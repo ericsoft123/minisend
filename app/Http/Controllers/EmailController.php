@@ -181,7 +181,7 @@ class EmailController extends Controller//client action only on email side
         $mail->SMTPDebug = 0;                     // Enable verbose debug output
         $mail->isSMTP();                                            // Send using SMTP
         //$mail->Host= env('MAIL_HOST');                    // Set the SMTP server to send through
-        $mail->Host="appdev.live";                    // Set the SMTP server to send through
+        $mail->Host=env('MAIL_HOST');                    // Set the SMTP server to send through
         $mail->SMTPAuth= true; 
         $mail->SMTPKeepAlive = true;                                    // Enable SMTP authentication
         $mail->Username=env('MAIL_USERNAME');             // SMTP username
@@ -191,12 +191,12 @@ class EmailController extends Controller//client action only on email side
         //$mail->Port =465;                                  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     
         //Recipients
-    $mail->setFrom('info@appdev.live',$sender_name);
+    $mail->setFrom(env('MAIL_USERNAME'),$sender_name);
         $mail->addAddress("$email",$recipient_name);   // Add a recipient
         //$mail->addAddress('ellen@example.com');
         
         //From email address and name
-         $mail->addReplyTo('info@appdev.live',$recipient_name);
+         $mail->addReplyTo(env('MAIL_USERNAME'),$recipient_name);
        //$mail->addCC('test@example.com');
       //$mail->addBCC('appdevlive@gmail.com');
    if($att_url!='none'){

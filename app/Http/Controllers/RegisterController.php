@@ -101,22 +101,22 @@ $user_platform=$str1[7];
                 );
                 $mail->SMTPDebug = 0;                                	// Enable verbose debug output
 				$mail->isSMTP();                                     	// Set mailer to use SMTP
-			    $mail->Host = 'smtp.appdev.live';												// Specify main and backup SMTP servers
+			    $mail->Host =env('MAIL_HOST'); 												// Specify main and backup SMTP servers
             //$mail->Host = 'mail.medsonline.net.za';												// Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                              	// Enable SMTP authentication
             //$mail->Username = 'info@tribaltrading43.co.za';             // SMTP username
             $mail->SMTPKeepAlive = true;    
-            $mail->Username = 'info@appdev.live';             // SMTP username
-            $mail->Password = '!1234Bigi';              // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
+            $mail->Username=env('MAIL_USERNAME');             // SMTP username
+        $mail->Password=env('MAIL_PASSWORD');                            // SMTP password
+        $mail->SMTPSecure ='tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port =env('MAIL_PORT');                           // TCP port to connect to
 
 				//Recipients
-				$mail->setFrom('info@appdev.live', 'MedsOnline');
+				$mail->setFrom(env('MAIL_USERNAME'), env('APP_NAME'));
 				//$mail->addAddress('drfordlive@gmail.com', 'Meds Online');	// Add a recipient, Name is optional
-               $mail->addAddress("$email",'Meds Online');
+               $mail->addAddress("$email",env('APP_NAME'));
                 //$mail->addAddress("llfmedia1@gmail.com",'Meds Online');
-                $mail->addReplyTo('info@appdev.live', 'MedsOnline');
+                $mail->addReplyTo(env('MAIL_USERNAME'), env('APP_NAME'));
 				/*$mail->addCC('his-her-email@gmail.com');
 				$mail->addBCC('his-her-email@gmail.com');*/
                
