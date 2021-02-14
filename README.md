@@ -1,3 +1,23 @@
+## installation Step
+
+<p>Step 1:Clone with git clone https://github.com/ericsoft123/minisend.git</p>
+
+
+<p>Step 2:Componser install</p>
+<p>Step 3:Rename env example to .env</p>
+<p>Step 4:open .env and change </p>
+
+DB_DATABASE='your Database name'
+DB_USERNAME='your username'
+DB_PASSWORD='your password'
+
+MAIL_HOST='smtp.yourwebsite.com'
+MAIL_USERNAME='your username'
+MAIL_PASSWORD='your password'
+
+<p>Step 4:php artisan migrate </p>
+<p>Step 4:php artisan serve </p>
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
