@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 
-class ProfileController extends Controller
+class ProfileController extends Controller// profile
 {
 
     

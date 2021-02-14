@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 
-class AdminEmailController extends Controller
+class AdminEmailController extends Controller//admin action only email
 {
     //
     public function admin_count_all(Request $request)//display count on display

@@ -15,7 +15,7 @@ use DB;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-class RegisterController extends Controller
+class RegisterController extends Controller//Registration based
 {
     public function __construct()
     {
@@ -43,7 +43,7 @@ class RegisterController extends Controller
         $this->dynamic_function1="Email_confirmation";
         $this->dynamic_function2="Email_resetpassword";
         $this->Appstate=env('APP_LIVE')?env('APP_PRO'):env('APP_DEV');
-        $this->table_limit_data="2";
+        $this->table_limit_data="2";//this will help us to limit users who will be able to use those table
         
         
         

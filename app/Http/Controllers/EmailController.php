@@ -9,7 +9,7 @@ use DB;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-class EmailController extends Controller
+class EmailController extends Controller//client action only on email side
 {
     public function __construct()
     {

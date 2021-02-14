@@ -20,7 +20,7 @@
     <span class="badge badge-primary badge-pill">{{failed_email_count}}</span>
   </li>
 
-  
+
  
 </ul>
            
@@ -172,7 +172,7 @@ for(let i=0;i<this.$refs.files.files.length;i++)
         formData.append('formData',json);
 axios.post('/email_actions',formData,config)
   .then((response) => {
-   //this.fields={};//to reset forms
+   this.fields={};//to reset forms
    self.$refs.files.value="";
    self.images=[];
      this.loadcount();

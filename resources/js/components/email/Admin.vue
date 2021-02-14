@@ -6,7 +6,7 @@
 
 <ul class="list-group" v-for="(message,index) in message_counterdata" :key="index">
     <li class="list-group-item d-flex justify-content-between align-items-center" @click="admin_total_clients()">
-    Total Clients by Country
+    Total Clients(by partition)
     <span class="badge badge-primary badge-pill">{{user_count}}</span>
   </li>
 <li class="list-group-item d-flex justify-content-between align-items-center activex" >
